@@ -4,45 +4,68 @@
     
     if ($_SERVER["REQUEST_METHOD"] == "POST")
     {
-        if (isset($_POST["download"]))
+        if (isset($_POST["createFile"]))
         {
-            $file = fopen("downloads/" . $_GET["id"] . ".txt", "w");
+            echo "createFile";
+            $id = $_GET["id"];
+            $file = fopen("downloads/" . $id . ".json", "w");
             fclose($file);
 
             include_once("storage.php");
-            $file = $content = new Storage(new JsonIO("downloads/" . $_GET["id"] . ".txt"));
-            for ($i = 0; $i < count($_POST["subject"]); $i++)
+            $file = new Storage(new JsonIO("downloads/" . $id . ".json"));
+
+            foreach ($_SESSION[$id] as $s)
             {
-                $file->add([
+                var_dump($s["subject"]);
+                echo "<br><br>";
+            }
+
+            //for ($i = 0; $i < count($_SESSION[$id]["subject"]); $i++)
+            //{
+            //    $file->add([
+            //        "code" => $_POST["code"][$i],
+            //        "name" => $_POST["subject"][$i],
+            //        "credit" => intval($_POST["credit"][$i]),
+            //        "grade" => intval($_POST["grade"][$i])
+            //    ]);
+            //}
+            //$file = "";
+        }
+        else if (isset($_POST["countResults"]))
+        {
+            $newContent = [];
+            
+            $credMulGrade = 0;
+            $creditCount = 0;
+            $creditAccomplished = 0;
+            $gradeSum = 0;
+            $count = count($_POST["subject"]);
+
+            for ($i = 0; $i < $count; $i++)
+            {
+                // Calculate
+                $c = intval($_POST["credit"][$i]);
+                $g = intval($_POST["grade"][$i]);
+                $creditCount += $c;
+                $gradeSum += $g;
+
+                if (intval($_POST["grade"][$i]) > 1)
+                {
+                    $creditAccomplished += $c;
+                    $credMulGrade += $c * $g;
+                }
+
+                // Save
+                $array = [
                     "code" => $_POST["code"][$i],
                     "name" => $_POST["subject"][$i],
-                    "credit" => intval($_POST["credit"][$i]),
-                    "grade" => intval($_POST["grade"][$i])
-                ]);
+                    "credit" => $c,
+                    "grade" => $g
+                ];
+                $newContent[] = $array;
             }
 
-            //header("Location: downloads/" . $_GET["id"] . ".txt");
-        }
-
-        // Calculate
-        $credMulGrade = 0;
-        $creditCount = 0;
-        $creditAccomplished = 0;
-        $gradeSum = 0;
-        $count = count($_POST["subject"]);
-
-        for ($i = 0; $i < $count; $i++)
-        {
-            $c = intval($_POST["credit"][$i]);
-            $g = intval($_POST["grade"][$i]);
-            $creditCount += $c;
-            $gradeSum += $g;
-
-            if (intval($_POST["grade"][$i]) > 1)
-            {
-                $creditAccomplished += $c;
-                $credMulGrade += $c * $g;
-            }
+            $_SESSION[$_GET["id"]] = $newContent;
         }
     }
 ?>
@@ -65,7 +88,7 @@
     </header>
 
     <div class="content">
-        <?php if ($_POST) : ?>
+        <?php if (isset($_POST["countResults"])) : ?>
             <div class="results">
                 <h2>Az eredményeid</h2>
                 <p>Kreditindex: <?php echo round($credMulGrade / 30, 2); ?></p>
@@ -95,15 +118,22 @@
                 </tr>
                 <?php endforeach; ?>
             </table>
-            <input type="submit" id="btn" value="Számolj!">
+            <input type="submit" id="btn" name="countResults" value="Számolj!">
         </form>
 
-        <form action="<?php echo 'download.php?id=' . htmlspecialchars($_GET["id"]); ?>">
-            <br><hr>
-            Menteni szeretnéd az adatokat?
-            <input type="submit" id="btn" name="download" value="Itt letöltheted!">
-            <a href="<?php echo $id; ?>"></a>
-        </form>
+        <?php if (isset($_POST["countResults"])) : ?>
+            <form method="post">
+                <br><hr>
+                Menteni szeretnéd az adatokat?
+                <input type="submit" id="btn" name="createFile" value="Fájl elkészítése">
+            </form>
+
+            <?php if (file_exists("downloads/" . $_GET["id"] . ".json")) : ?>
+                <div id="dload">
+                    <a href="<?php echo "downloads/" . $_GET["id"] . ".json" ?>" download="<?php echo "downloads/" . $_GET["id"] . ".json" ?>" id="btn">Letöltés 💾</a>
+                </div>
+            <?php endif; ?>
+        <?php endif; ?>
     </div>
 </body>
 </html>

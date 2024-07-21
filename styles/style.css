@@ -35,6 +35,10 @@ a {
     box-shadow: 3px 3px 6px #A2C7E5;
 }
 
+#dload {
+    margin-top: 10px;
+}
+
 header {
     display: flex;
     flex-direction: row;
