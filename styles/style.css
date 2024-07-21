@@ -2,7 +2,10 @@ body {
     font-family: Arial, sans-serif;
     background-color: #e6f7ff;
     color: #022A50;
-    margin: 0;
+    margin: 0px;
+}
+
+.content {
     padding: 20px;
 }
 
@@ -19,11 +22,6 @@ a {
     width: fit-content;
 }
 
-.back {
-    display: flex;
-    justify-content: flex-end;
-}
-
 #btn, button {
     border-radius: 8px;
     border: 0px;
@@ -35,4 +33,28 @@ a {
 
 #btn:hover, button:hover {
     box-shadow: 3px 3px 6px #A2C7E5;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    background-color: #A2C7E5;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+#language {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+}
+
+#language div {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 5px;
+    height: fit-content;
 }

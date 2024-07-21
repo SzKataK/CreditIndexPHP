@@ -131,62 +131,62 @@
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <a href="index.php"><h1>Kreditindex számoló</h1></a>
+    <header>
+        <a href="index.php"><h1>Kreditindex számoló</h1></a>
+        <div id="language">
+            <div>HU</div>
+            <div>ENG</div>
+        </div>
+    </header>
 
-    <h2>Használat</h2>
-    <form method="get">
-        <p>Válassz beviteli módot!</p>
-
-        <input type="radio" id="text" name="format" value="text">
-        <label for="text">Szöveg a Neptunból</label><br>
-
-        <input type="radio" id="jsonFile" name="format" value="jsonFile">
-        <label for="jsonFile">JSON fájl feltöltése</label><br>
-
-        <input type="submit" id="btn" value="Kiválaszt">
-    </form>
-
-    <?php if ($format == "text") : ?>
-    <div class="text-input">
-        <hr>
-        <h3>Neptunos szöveg alapján</h3>
-        <p>Neptun → Tárgyak → Felvett tárgyak</p>
-        <p>Másold át a tartalmat ide!</p>
-
-        <form method="post">
-            <textarea id="content" name="content" rows="20" cols="80" placeholder="Másold ide a tartalmat a Neptunból!"></textarea>
-            <br>
-            <input type="submit" value="Feldolgozás" id="btn">
+    <div class="content">
+        <h2>Használat</h2>
+        <form method="get">
+            <p>Válassz beviteli módot!</p>
+            <input type="radio" id="text" name="format" value="text">
+            <label for="text">Szöveg a Neptunból</label><br>
+            <input type="radio" id="jsonFile" name="format" value="jsonFile">
+            <label for="jsonFile">JSON fájl feltöltése</label><br>
+            <input type="submit" id="btn" value="Kiválaszt">
         </form>
-    </div>
-    <?php endif; ?>
-
-    <?php if ($format == "jsonFile") : ?>
-    <div class="json-file-input">
-        <hr>
-        <h3>JSON fájl feltöltése</h3>
-        <p>Töltsd fel az oldalról letöltött JSON fájlt!</p>
-
-        <form method="post" enctype="multipart/form-data">
-            Válaszd ki a fájlt:
-            <input type="file" name="fileToUpload" id="fileToUpload">
-            <br><br>
-            <input type="submit" value="Fájl feltöltése" name="uploadFile" id="btn">
-        </form>
-    </div>
-    <?php endif; ?>
-
-    <?php
-        if (($format == "text" || $format == "jsonFile") && count($errors) > 0)
-        {
-            echo "<p>Hiba történt!</p>";
-            echo "<ul>";
-            foreach ($errors as $e)
+        <?php if ($format == "text") : ?>
+        <div class="text-input">
+            <hr>
+            <h3>Neptunos szöveg alapján</h3>
+            <p>Neptun → Tárgyak → Felvett tárgyak</p>
+            <p>Másold át a tartalmat ide!</p>
+            <form method="post">
+                <textarea id="content" name="content" rows="20" cols="80" placeholder="Másold ide a tartalmat a Neptunból!"></textarea>
+                <br>
+                <input type="submit" value="Feldolgozás" id="btn">
+            </form>
+        </div>
+        <?php endif; ?>
+        <?php if ($format == "jsonFile") : ?>
+        <div class="json-file-input">
+            <hr>
+            <h3>JSON fájl feltöltése</h3>
+            <p>Töltsd fel az oldalról letöltött JSON fájlt!</p>
+            <form method="post" enctype="multipart/form-data">
+                Válaszd ki a fájlt:
+                <input type="file" name="fileToUpload" id="fileToUpload">
+                <br><br>
+                <input type="submit" value="Fájl feltöltése" name="uploadFile" id="btn">
+            </form>
+        </div>
+        <?php endif; ?>
+        <?php
+            if (($format == "text" || $format == "jsonFile") && count($errors) > 0)
             {
-                echo "<li>$e</li>";
+                echo "<p>Hiba történt!</p>";
+                echo "<ul>";
+                foreach ($errors as $e)
+                {
+                    echo "<li>$e</li>";
+                }
+                echo "</ul>";
             }
-            echo "</ul>";
-        }
-    ?>
+        ?>
+    </div>
 </body>
 </html>
