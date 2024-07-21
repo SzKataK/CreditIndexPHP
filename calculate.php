@@ -6,30 +6,22 @@
     {
         if (isset($_POST["createFile"]))
         {
-            echo "createFile";
             $id = $_GET["id"];
             $file = fopen("downloads/" . $id . ".json", "w");
             fclose($file);
 
             include_once("storage.php");
             $file = new Storage(new JsonIO("downloads/" . $id . ".json"));
-
             foreach ($_SESSION[$id] as $s)
             {
-                var_dump($s["subject"]);
-                echo "<br><br>";
+                $file->add([
+                    "code" => $s["code"],
+                    "name" => $s["name"],
+                    "credit" => $s["credit"],
+                    "grade" => $s["grade"]
+                ]);
             }
-
-            //for ($i = 0; $i < count($_SESSION[$id]["subject"]); $i++)
-            //{
-            //    $file->add([
-            //        "code" => $_POST["code"][$i],
-            //        "name" => $_POST["subject"][$i],
-            //        "credit" => intval($_POST["credit"][$i]),
-            //        "grade" => intval($_POST["grade"][$i])
-            //    ]);
-            //}
-            //$file = "";
+            $file = "";
         }
         else if (isset($_POST["countResults"]))
         {
@@ -39,7 +31,7 @@
             $creditCount = 0;
             $creditAccomplished = 0;
             $gradeSum = 0;
-            $count = count($_POST["subject"]);
+            $count = count($_POST["name"]);
 
             for ($i = 0; $i < $count; $i++)
             {
@@ -58,7 +50,7 @@
                 // Save
                 $array = [
                     "code" => $_POST["code"][$i],
-                    "name" => $_POST["subject"][$i],
+                    "name" => $_POST["name"][$i],
                     "credit" => $c,
                     "grade" => $g
                 ];
@@ -80,7 +72,7 @@
 </head>
 <body>
     <header>
-        <a href="index.php"><h1>Kreditindex számoló</h1></a>
+        <a href="<?php echo "back.php?id=" . $_GET["id"]; ?>"><h1>Kreditindex számoló</h1></a>
         <div id="language">
             <div>HU</div>
             <div>ENG</div>
@@ -112,7 +104,7 @@
                 <?php foreach ($content as $c) : ?>
                 <tr>
                     <td><input name="code[]" type="text" size="20px" value="<?php echo $c["code"]; ?>"></td>
-                    <td><input name="subject[]" type="text" size="50px" value="<?php echo $c["name"]; ?>"></td>
+                    <td><input name="name[]" type="text" size="50px" value="<?php echo $c["name"]; ?>"></td>
                     <td><input name="credit[]" type="number" value="<?php echo $c["credit"]; ?>" min="0" max="10"></td>
                     <td><input name="grade[]" type="number" value="<?php echo $c["grade"]; ?>" min="1" max="5"></td>
                 </tr>
@@ -127,12 +119,14 @@
                 Menteni szeretnéd az adatokat?
                 <input type="submit" id="btn" name="createFile" value="Fájl elkészítése">
             </form>
+        <?php endif; ?>
 
-            <?php if (file_exists("downloads/" . $_GET["id"] . ".json")) : ?>
-                <div id="dload">
-                    <a href="<?php echo "downloads/" . $_GET["id"] . ".json" ?>" download="<?php echo "downloads/" . $_GET["id"] . ".json" ?>" id="btn">Letöltés 💾</a>
-                </div>
-            <?php endif; ?>
+        <?php if (file_exists("downloads/" . $_GET["id"] . ".json")) : ?>
+            <div id="dload">
+                <br><hr>
+                <p>A fájl elkészült! Töltsd le az alábbi gomb segítségével!</p>
+                <a href="<?php echo "downloads/" . $_GET["id"] . ".json" ?>" download="<?php echo "downloads/" . $_GET["id"] . ".json" ?>" id="btn">Letöltés 💾</a>
+            </div>
         <?php endif; ?>
     </div>
 </body>
