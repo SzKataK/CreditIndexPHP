@@ -7,6 +7,8 @@ body {
 
 .content {
     padding: 20px;
+    margin: 0 auto;
+    min-height: 80vh;
 }
 
 a {
@@ -45,6 +47,12 @@ header {
     background-color: #A2C7E5;
     justify-content: space-between;
     padding: 10px;
+}
+
+footer {
+    background-color: #A2C7E5;
+    padding: 10px;
+    text-align: center;
 }
 
 #language {

@@ -135,7 +135,7 @@
         <a href="index.php"><h1>Kreditindex számoló</h1></a>
         <div id="language">
             <div>HU</div>
-            <div>ENG</div>
+            <div><a href="index_eng.php">ENG</a></div>
         </div>
     </header>
 
@@ -188,5 +188,9 @@
             }
         ?>
     </div>
+
+    <footer>
+        <p>Kreditindex számoló ELTÉ-seknek a <a href="https://www.elte.hu/dstore/document/898/ELTE_SZMSZ_II_170530.pdf">2017-es HKR alapján</a></p>
+    </footer>
 </body>
 </html>
