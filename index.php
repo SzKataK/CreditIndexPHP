@@ -132,7 +132,7 @@
 </head>
 <body>
     <header>
-        <a href="index.php"><h1>Kreditindex számoló</h1></a>
+    <a href="index.php"><h1>Kreditindex számoló</h1></a>
         <div id="language">
             <div>HU</div>
             <div><a href="index_eng.php">ENG</a></div>
