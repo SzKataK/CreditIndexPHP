@@ -26,8 +26,8 @@ Programozási nyelv: PHP
 
 | Megnevezés | Számolás menete |
 | - | - |
-| Kreditindex | $\text{KI} \; = \; \dfrac{\sum (\text{teljesített kredit} \; \cdot \; \text{érdemjegy})}{30}$ |
-| Korrigált kreditindex | $\text{KKI} \; = \; \dfrac{\sum (\text{teljesített kredit} \; \cdot \; \text{érdemjegy})}{30} \cdot \dfrac{\text{teljesített kredit}}{\text{felvett kredit}}$ |
+| Kreditindex | $\text{KI} \quad = \quad \dfrac{\sum (\text{teljesített kredit} \quad \cdot \quad \text{érdemjegy})}{30}$ |
+| Korrigált kreditindex | $\text{KKI} \quad = \quad \dfrac{\sum (\text{teljesített kredit} \quad \cdot \quad \text{érdemjegy})}{30} \cdot \dfrac{\text{teljesített kredit}}{\text{felvett kredit}}$ |
 | Teljesített kredit | $\sum \text{teljesített kredit}$ |
-| Hagyományos átlag | $\text{HA} \; = \; \dfrac{\sum \text{érdemjegy}}{\sum \text{tárgyak száma}}$ |
-| Súlyozott átlag | $\text{TÁ} \; = \; \dfrac{\sum (\text{teljesített kredit} \; \cdot \; \text{érdemjegy})}{\sum \text{teljesített kredit}}$ |
+| Hagyományos átlag | $\text{HA} \quad = \quad \dfrac{\sum \text{érdemjegy}}{\sum \text{tárgyak száma}}$ |
+| Súlyozott átlag | $\text{TÁ} \quad = \quad \dfrac{\sum (\text{teljesített kredit} \quad \cdot \quad \text{érdemjegy})}{\sum \text{teljesített kredit}}$ |
