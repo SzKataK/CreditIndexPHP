@@ -51,7 +51,7 @@
                     $id = uniqid();
                     session_start();
                     $_SESSION[$id] = $content;
-                    header("Location: calculate.php?id=". $id);
+                    header("Location: calculate_hu.php?id=". $id);
                 }
             }
         }
@@ -103,7 +103,7 @@
                             $_SESSION[$id] = $content->findAll();
                             $content = "";
                             unlink($targetFile);
-                            header("Location: calculate.php?id=". $id);
+                            header("Location: calculate_hu.php?id=". $id);
                         }
                         else
                         {

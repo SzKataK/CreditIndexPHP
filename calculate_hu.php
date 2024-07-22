@@ -129,5 +129,9 @@
             </div>
         <?php endif; ?>
     </div>
+
+    <footer>
+        <p>Kreditindex számoló ELTÉ-seknek a <a href="https://www.elte.hu/dstore/document/898/ELTE_SZMSZ_II_170530.pdf">2017-es HKR alapján</a></p>
+    </footer>
 </body>
 </html>
