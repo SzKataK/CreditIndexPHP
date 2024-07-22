@@ -149,6 +149,7 @@
             <label for="jsonFile">JSON fájl feltöltése</label><br>
             <input type="submit" id="btn" value="Kiválaszt">
         </form>
+
         <?php if ($format == "text") : ?>
         <div class="text-input">
             <hr>
@@ -162,6 +163,7 @@
             </form>
         </div>
         <?php endif; ?>
+        
         <?php if ($format == "jsonFile") : ?>
         <div class="json-file-input">
             <hr>
