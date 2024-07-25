@@ -83,9 +83,9 @@
         <?php if (isset($_POST["countResults"])) : ?>
             <div class="results">
                 <h2>Your results</h2>
-                <p>Kreditindex: <?php echo round($credMulGrade / 30, 2); ?></p>
-                <p>Korrigált kreditindex: <?php echo round(($credMulGrade / 30) * ($creditAccomplished / $creditCount), 2); ?></p>
-                <p>Kredit teljesítve: <?php echo $creditAccomplished; ?></p>
+                <p>Credit index: <?php echo round($credMulGrade / 30, 2); ?></p>
+                <p>Corrected credit index: <?php echo round(($credMulGrade / 30) * ($creditAccomplished / $creditCount), 2); ?></p>
+                <p>Kredit completed: <?php echo $creditAccomplished; ?></p>
                 <p>Hagyományos átlag: <?php echo round($gradeSum / $count, 2); ?></p>
                 <p>Súlyozott átlag: <?php echo round($credMulGrade / $creditCount, 2); ?></p>
             </div>

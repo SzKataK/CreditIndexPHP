@@ -4,11 +4,9 @@
 
 This is a credit index counter for ELTE University (Hungary) students.
 
-I'm planning to do an English update where I translate the website.
-
 Programming language: PHP
 
-Language: Hungarian
+Language: Hungarian and English
 
 ## Leírás
 
