@@ -1,0 +1,8 @@
+services:
+  credit:
+    build: .
+    ports:
+      - 80:80
+    volumes:
+      - ./uploads:/var/www/html/uploads:rw
+      - ./downloads:/var/www/html/downloads:rw
