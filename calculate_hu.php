@@ -72,10 +72,15 @@
 </head>
 <body>
     <header>
-        <a href="<?php echo "back.php?id=" . $_GET["id"]; ?>"><h1>Kreditindex számoló</h1></a>
-        <div id="language">
-            <div>HU</div>
-            <div><a href="<?php echo "calculate_eng.php?id=" . $_GET["id"]; ?>">ENG</a></div>
+        <h1><a href="<?php echo "back.php?id=" . $_GET["id"]; ?>">Kreditindex számoló</a></h1>
+
+        <div id="lang">
+            <a href="<?php echo "calculate_hu.php?id=" . $_GET["id"]; ?>">
+                <div>HU</div>
+            </a>
+            <a href="<?php echo "calculate_eng.php?id=" . $_GET["id"]; ?>">
+                <div>ENG</div>
+            </a>
         </div>
     </header>
 

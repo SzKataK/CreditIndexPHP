@@ -16,14 +16,6 @@ a {
     text-decoration: none;
 }
 
-.results {
-    border: 2px solid #022A50;
-    border-radius: 10px;
-    box-shadow: #A2C7E5 5px 5px;
-    padding: 10px;
-    width: fit-content;
-}
-
 #btn, button {
     border-radius: 8px;
     border: 0px;
@@ -41,12 +33,40 @@ a {
     margin-top: 10px;
 }
 
+.results {
+    border: 2px solid #022A50;
+    border-radius: 10px;
+    box-shadow: #A2C7E5 5px 5px;
+    padding: 10px;
+    width: fit-content;
+}
+
 header {
+    background-color: #A2C7E5;
+    padding: 10px;
     display: flex;
     flex-direction: row;
-    background-color: #A2C7E5;
     justify-content: space-between;
+}
+
+#lang {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    margin: 5px;
+    align-items: center;
+}
+
+#lang div {
+    margin: 10px;
+    font-size: 1.1em;
     padding: 10px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+header h1 a:hover {
+    text-decoration: underline;
 }
 
 footer {
@@ -55,18 +75,3 @@ footer {
     text-align: center;
 }
 
-#language {
-    display: flex;
-    flex-direction: row;
-    justify-content: right;
-}
-
-#language div {
-    display: flex;
-    align-items: center;
-    background-color: white;
-    border-radius: 5px;
-    margin: 10px;
-    padding: 5px;
-    height: fit-content;
-}

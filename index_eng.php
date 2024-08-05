@@ -132,10 +132,15 @@
 </head>
 <body>
     <header>
-        <a href="index_eng.php"><h1>Credit index counter</h1></a>
-        <div id="language">
-            <div><a href="index.php">HU</a></div>
-            <div>ENG</div>
+        <h1><a href="index.php">Credit index counter</a></h1>
+
+        <div id="lang">
+            <a href="index.php">
+                <div>HU</div>
+            </a>
+            <a href="index_eng.php">
+                <div>ENG</div>
+            </a>
         </div>
     </header>
 
