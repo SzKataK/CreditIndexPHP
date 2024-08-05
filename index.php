@@ -1,4 +1,17 @@
 <?php
+    // Delete files older than 1 hour
+    foreach (scandir("downloads") as $file)
+    {
+        if (pathinfo($file, PATHINFO_EXTENSION) == "json" && strlen($file) == 18)
+        {
+            if (time() - filemtime("downloads/" . $file) > 3600)
+            {
+                unlink("downloads/" . $file);
+            }
+        }
+    }
+
+    // format
     $format = isset($_GET["format"]) ? $_GET["format"] : "";
     $errors = [];
 
