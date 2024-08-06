@@ -90,9 +90,9 @@
                 <h2>Your results</h2>
                 <p>Credit index: <?php echo round($credMulGrade / 30, 2); ?></p>
                 <p>Corrected credit index: <?php echo round(($credMulGrade / 30) * ($creditAccomplished / $creditCount), 2); ?></p>
-                <p>Kredit completed: <?php echo $creditAccomplished; ?></p>
-                <p>Hagyományos átlag: <?php echo round($gradeSum / $count, 2); ?></p>
-                <p>Súlyozott átlag: <?php echo round($credMulGrade / $creditCount, 2); ?></p>
+                <p>Credit accomplished: <?php echo $creditAccomplished; ?></p>
+                <p>Classical average: <?php echo round($gradeSum / $count, 2); ?></p>
+                <p>Weighted average: <?php echo round($credMulGrade / $creditCount, 2); ?></p>
             </div>
         <?php endif; ?>
 

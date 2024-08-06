@@ -136,7 +136,13 @@
     </div>
 
     <footer>
-        <p>Kreditindex számoló ELTÉ-seknek a <a href="https://www.elte.hu/dstore/document/898/ELTE_SZMSZ_II_170530.pdf">2017-es HKR alapján</a></p>
+        <p>Kreditindex számoló egyetemi hallgatóknak</p>
+        <ul>
+            <li>ELTE: <a href="https://www.elte.hu/dstore/document/898/ELTE_SZMSZ_II_170530.pdf">2017-es HKR</a></li>
+            <li>Károli:</li>
+            <li>BME: <a href="https://www.kth.bme.hu/document/3040/original/BME_TVSz_2016_elfogadott_mod_20240625_T_S.pdf">2016-os TVSZ</a></li>
+        </ul>
+        <p>Készítette: SzKK</p>
     </footer>
 </body>
 </html>
