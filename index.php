@@ -141,7 +141,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kreditindex számoló</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles_animations/style.css">
 </head>
 <body>
     <header>
@@ -158,15 +158,30 @@
     </header>
 
     <div class="content">
-        <h2>Használat</h2>
+        <h2>Kreditindex számoló egyetemi hallgatóknak</h2>
+        <p>A kreditindex egy tanulmányi mutató, amelyet a magyar egyetemeken használnak. Intézményenként eltérhet, hogy mi alapján adják az ösztöndíjakat, de sok helyen ezt használják. Az oldal arra szolgál, hogy könnyedén kiszámíthasd a kreditindexedet.</p>
+        <button class="collapsible">Egyetemek listája</button>
+        <div class="collContent">
+            <ul>
+                <li><a href="https://www.elte.hu/dstore/document/898/ELTE_SZMSZ_II_170530.pdf">Eötvös Loránd Tudományegyetem (ELTE) – HKR (2017)</a></li>
+                <li><a href="https://u-szeged.hu/szabalyzatok/tanulmanyi-220819">Szegedi Tudományegyetem (SZTE) – TVSZ (2022)</a></li>
+                <li><a href="https://www.kth.bme.hu/document/3040/original/BME_TVSz_2016_elfogadott_mod_20240625_T_S.pdf">Budapesti Műszaki és Gazdaságtudományi Egyetem (BME) – TVSZ (2016)</a></li>
+                <li><a href="https://www.uni-corvinus.hu/contents/uploads/2023/07/HKR_3_TVSZ_2020_december_1.1b0.pdf">Budapesti Corvinus Egyetem (CORVINUS) – TVSZ (2020)</a></li>
+                <li><a href="https://btk.ppke.hu/uploads/articles/3763/file/Tanulm%C3%A1nyi%20%C3%A9s%20Vizsgaszab%C3%A1lyzat%20egys%C3%A9ges%20szerkezetben%20a%20BTK%20kieg%C3%A9sz%C3%ADt%C5%91%20rendelkez%C3%A9seivel.pdf">Pázmány Péter Katolikus Egyetem (PPKE) – TVSZ (2023)</a></li>
+                <li><a href="https://portal.kre.hu/index.php/home/szabalyzatok.html?download=27:iii-hallgatoi-kovetelmenyrendszer-tvsz-2024-06-12">Károli Gáspár Református Egyetem (KRE) – TVSZ (2023)</a></li>
+                <li><a href="https://webapi.uni-bge.hu/api/v1/files/download/documents/hallgatoi-dokumentumok/hallgatoi-kovetelmenyrendszer/a-budapesti-gazdasagi-egyetem-hallgatoi-kovetelmenyrendszere?id=28072&download=true">Budapesti Gazdasági Egyetem (BGE) – HKR (2023)</a></li>
+            </ul>
+        </div>
+
+        <h2>Válassz beviteli módot!</h2>
         <form method="get">
-            <p>Válassz beviteli módot!</p>
             <input type="radio" id="text" name="format" value="text">
             <label for="text">Szöveg a Neptunból</label><br>
             <input type="radio" id="jsonFile" name="format" value="jsonFile">
             <label for="jsonFile">JSON fájl feltöltése</label><br>
             <input type="submit" id="btn" value="Kiválaszt">
         </form>
+        <br>
 
         <?php if ($format == "text") : ?>
         <div class="text-input">
@@ -186,7 +201,7 @@
         <div class="json-file-input">
             <hr>
             <h3>JSON fájl feltöltése</h3>
-            <p>Töltsd fel az oldalról letöltött JSON fájlt!</p>
+            <p>Ha már használtad az oldalt, akkor töltsd fel az oldalról letöltött JSON fájlt!</p>
             <form method="post" enctype="multipart/form-data">
                 Válaszd ki a fájlt:
                 <input type="file" name="fileToUpload" id="fileToUpload">
@@ -210,13 +225,11 @@
     </div>
 
     <footer>
-        <p>Kreditindex számoló egyetemi hallgatóknak</p>
-        <ul>
-            <li>ELTE: <a href="https://www.elte.hu/dstore/document/898/ELTE_SZMSZ_II_170530.pdf">2017-es HKR</a></li>
-            <li>Károli:</li>
-            <li>BME: <a href="https://www.kth.bme.hu/document/3040/original/BME_TVSz_2016_elfogadott_mod_20240625_T_S.pdf">2016-os TVSZ</a></li>
-        </ul>
-        <p>Készítette: SzKK</p>
+        Készítette: SzKK
+        <br>
+        <a href="https://github.com/SzKataK"><img src="styles_animations/github_logo.png" alt="github_logo"></a>
     </footer>
+
+    <script src="styles_animations/animation.js"></script>
 </body>
 </html>

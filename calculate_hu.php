@@ -68,7 +68,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kreditindex számoló</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles_animations/style.css">
 </head>
 <body>
     <header>
@@ -136,13 +136,9 @@
     </div>
 
     <footer>
-        <p>Kreditindex számoló egyetemi hallgatóknak</p>
-        <ul>
-            <li>ELTE: <a href="https://www.elte.hu/dstore/document/898/ELTE_SZMSZ_II_170530.pdf">2017-es HKR</a></li>
-            <li>Károli:</li>
-            <li>BME: <a href="https://www.kth.bme.hu/document/3040/original/BME_TVSz_2016_elfogadott_mod_20240625_T_S.pdf">2016-os TVSZ</a></li>
-        </ul>
-        <p>Készítette: SzKK</p>
+        Készítette: SzKK
+        <br>
+        <a href="https://github.com/SzKataK"><img src="styles_animations/github_logo.png" alt="github_logo"></a>
     </footer>
 </body>
 </html>

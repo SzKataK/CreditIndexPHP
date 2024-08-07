@@ -128,7 +128,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Credit index counter</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles_animations/style.css">
 </head>
 <body>
     <header>
@@ -145,10 +145,23 @@
     </header>
 
     <div class="content">
-        <h2>Usage</h2>
-        <form method="get">
-            <p>Choose an input method!</p>
+    <h2>Kreditindex számoló egyetemi hallgatóknak</h2>
+        <p>The credit index is an academic index used by Hungarian universities. (It is similar to the GPA and ECTS used by foreign universities.) The basis on which the scholarships are awarded may differ from institution to institution, but this is used in many places. You can use this website to calculate your credit index.</p>
+        <button class="collapsible">List of universities</button>
+        <div class="collContent">
+            <ul>
+                <li><a href="https://www.elte.hu/dstore/document/898/ELTE_SZMSZ_II_170530.pdf">Eötvös Loránd Tudományegyetem (ELTE) – HKR (2017)</a></li>
+                <li><a href="https://u-szeged.hu/szabalyzatok/tanulmanyi-220819">Szegedi Tudományegyetem (SZTE) – TVSZ (2022)</a></li>
+                <li><a href="https://www.kth.bme.hu/document/3040/original/BME_TVSz_2016_elfogadott_mod_20240625_T_S.pdf">Budapesti Műszaki és Gazdaságtudományi Egyetem (BME) – TVSZ (2016)</a></li>
+                <li><a href="https://www.uni-corvinus.hu/contents/uploads/2023/07/HKR_3_TVSZ_2020_december_1.1b0.pdf">Budapesti Corvinus Egyetem (CORVINUS) – TVSZ (2020)</a></li>
+                <li><a href="https://btk.ppke.hu/uploads/articles/3763/file/Tanulm%C3%A1nyi%20%C3%A9s%20Vizsgaszab%C3%A1lyzat%20egys%C3%A9ges%20szerkezetben%20a%20BTK%20kieg%C3%A9sz%C3%ADt%C5%91%20rendelkez%C3%A9seivel.pdf">Pázmány Péter Katolikus Egyetem (PPKE) – TVSZ (2023)</a></li>
+                <li><a href="https://portal.kre.hu/index.php/home/szabalyzatok.html?download=27:iii-hallgatoi-kovetelmenyrendszer-tvsz-2024-06-12">Károli Gáspár Református Egyetem (KRE) – TVSZ (2023)</a></li>
+                <li><a href="https://webapi.uni-bge.hu/api/v1/files/download/documents/hallgatoi-dokumentumok/hallgatoi-kovetelmenyrendszer/a-budapesti-gazdasagi-egyetem-hallgatoi-kovetelmenyrendszere?id=28072&download=true">Budapesti Gazdasági Egyetem (BGE) – HKR (2023)</a></li>
+            </ul>
+        </div>
 
+        <h2>Choose an input method!</h2>
+        <form method="get">
             <input type="radio" id="text" name="format" value="text">
             <label for="text">Text from Neptun</label><br>
 
@@ -201,7 +214,11 @@
     </div>
     
     <footer>
-        <p>Credit index counter for ELTE students</p>
+        Made by SzKK
+        <br>
+        <a href="https://github.com/SzKataK"><img src="styles_animations/github_logo.png" alt="github_logo"></a>
     </footer>
+
+    <script src="styles_animations/animation.js"></script>
 </body>
 </html>

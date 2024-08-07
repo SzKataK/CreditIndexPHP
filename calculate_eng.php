@@ -68,7 +68,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Credit index counter</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles_animations/style.css">
 </head>
 <body>
     <header>
@@ -136,7 +136,9 @@
     </div>
     
     <footer>
-        <p>Credit index counter for ELTE students</p>
+        Made by SzKK
+        <br>
+        <a href="https://github.com/SzKataK"><img src="styles_animations/github_logo.png" alt="github_logo"></a>
     </footer>
 </body>
 </html>

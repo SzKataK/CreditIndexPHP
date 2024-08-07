@@ -1,0 +1,124 @@
+:root {
+    --white: #ffffff;
+    --light: #e6f7ff;
+    --middle: #A2C7E5;
+    --dark: #022A50;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--light);
+    color: var(--dark);
+    margin: 0px;
+}
+
+.content {
+    padding: 20px;
+    margin: 0 auto;
+    min-height: 80vh;
+}
+
+a {
+    color: var(--dark);
+    text-decoration: none;
+}
+
+.content a:hover {
+    text-decoration: underline;
+}
+
+#btn, button {
+    border-radius: 8px;
+    border: 0px;
+    padding: 5px;
+    background-color: var(--dark);
+    color: var(--white);
+    margin-top: 10px;
+}
+
+#btn:hover, button:hover {
+    box-shadow: 3px 3px 6px var(--middle);
+}
+
+#dload {
+    margin-top: 10px;
+}
+
+.results {
+    border: 2px solid var(--dark);
+    border-radius: 10px;
+    box-shadow: var(--middle) 5px 5px;
+    padding: 10px;
+    width: fit-content;
+}
+
+header {
+    background-color: var(--middle);
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#lang {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    margin: 5px;
+    align-items: center;
+}
+
+#lang div {
+    margin: 10px;
+    font-size: 1.1em;
+    padding: 10px;
+    background-color: var(--white);
+    border-radius: 5px;
+}
+
+#lang div:hover {
+    color: var(--white);
+    background-color: var(--dark);
+}
+
+header h1 a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background-color: var(--middle);
+    padding: 12px;
+    text-align: center;
+}
+
+img {
+    width: 1.8em;
+    margin: 0px;
+    margin-top: 5px;
+}
+
+.collapsible {
+    background-color: var(--middle);
+    color: var(--dark);
+    font-weight: bold;
+    font-size: 1em;
+    padding: 7px;
+    width: fit-content;
+    margin: 0px;
+}
+  
+.collapsible:hover {
+    box-shadow: none;
+    background-color: var(--dark);
+    color: var(--white);
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.collContent {
+    width: fit-content;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
