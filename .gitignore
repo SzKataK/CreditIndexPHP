@@ -1,3 +1,5 @@
 # Ignore
-files/_tmp.txt
-files/data.json
+downloads/*
+!downloads/.placeholder
+uploads/*
+!uploads/.placeholder
