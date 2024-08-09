@@ -1,6 +1,25 @@
 <?php
     session_start();
-    $content = $_SESSION[$_GET["id"]];
+
+    $content = [];
+    if (isset($_POST) && isset($_POST["countResults"]))
+    {
+        $count = count($_POST["name"]);
+        for ($i = 0; $i < $count; $i++)
+        {
+            $array = [
+                "code" => $_POST["code"][$i],
+                "name" => $_POST["name"][$i],
+                "credit" => intval($_POST["credit"][$i]),
+                "grade" => intval($_POST["grade"][$i])
+            ];
+            $content[] = $array;
+        }
+    }
+    else
+    {
+        $content = $_SESSION[$_GET["id"]];
+    }
     
     if ($_SERVER["REQUEST_METHOD"] == "POST")
     {
@@ -12,13 +31,13 @@
 
             include_once("storage.php");
             $file = new Storage(new JsonIO("downloads/" . $id . ".json"));
-            foreach ($_SESSION[$id] as $s)
+            foreach ($content as $c)
             {
                 $file->add([
-                    "code" => $s["code"],
-                    "name" => $s["name"],
-                    "credit" => $s["credit"],
-                    "grade" => $s["grade"]
+                    "code" => $c["code"],
+                    "name" => $c["name"],
+                    "credit" => $c["credit"],
+                    "grade" => $c["grade"]
                 ]);
             }
             $file = "";
