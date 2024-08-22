@@ -1,6 +1,13 @@
 <?php
+    // Define the name comparison function
+    function compareByName($a, $b)
+    {
+        return strcmp($a['name'], $b['name']);
+    }
+
     session_start();
 
+    // Set content
     $content = [];
     if (isset($_POST) && isset($_POST["countResults"]))
     {
@@ -15,12 +22,15 @@
             ];
             $content[] = $array;
         }
+        usort($content, 'compareByName');
     }
     else
     {
         $content = $_SESSION[$_GET["id"]];
+        usort($content, 'compareByName');
     }
     
+    // Handle POST requests
     if ($_SERVER["REQUEST_METHOD"] == "POST")
     {
         if (isset($_POST["createFile"]))
@@ -65,7 +75,18 @@
                     $creditAccomplished += $c;
                     $credMulGrade += ($c * $g);
                 }
+
+                // Save
+                $array = [
+                    "code" => $_POST["code"][$i],
+                    "name" => $_POST["name"][$i],
+                    "credit" => intval($_POST["credit"][$i]),
+                    "grade" => intval($_POST["grade"][$i])
+                ];
+                $newContent[] = $array;
             }
+
+            $_SESSION[$_GET["id"]] = $newContent;
         }
     }
 ?>
@@ -114,16 +135,34 @@
                     <th>Kredit</th>
                     <th>Jegy</th>
                 </tr>
+                <?php $count = 0; ?>
                 <?php foreach ($content as $c) : ?>
                 <tr>
                     <td><input name="code[]" type="text" size="20px" value="<?php echo $c["code"]; ?>"></td>
                     <td><input name="name[]" type="text" size="50px" value="<?php echo $c["name"]; ?>"></td>
                     <td><input name="credit[]" type="number" value="<?php echo $c["credit"]; ?>" min="0" max="10"></td>
                     <td><input name="grade[]" type="number" value="<?php echo $c["grade"]; ?>" min="1" max="5"></td>
+                    
+                    <td><input name="minus-<?php $count ?>" type="button" value="-"></td>
+                    <?php $count += 1; ?>
                 </tr>
                 <?php endforeach; ?>
             </table>
-            <input type="submit" id="btn" name="countResults" value="Számolj!">
+
+            <input type="submit" id="btn" name="countResults" value="Számolj!">            
+        </form>
+
+        <form action="post">
+            <p>Új tárgy hozzáadása</p>
+            <table>
+                <tr>
+                    <td><input name="code" type="text" size="20px" placeholder="Tárgykód"></td>
+                    <td><input name="name" type="text" size="50px" placeholder="Tárgynév"></td>
+                    <td><input name="credit" type="number" min="0" max="10" placeholder="Kredit"></td>
+                    <td><input name="grade" type="number" min="1" max="5" placeholder="Jegy"></td>
+                    <td><input type="submit" name="addNewSubject" value="+"></td>
+                </tr>
+            </table>
         </form>
 
         <?php if (isset($_POST["countResults"])) : ?>

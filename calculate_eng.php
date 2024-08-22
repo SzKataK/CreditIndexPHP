@@ -1,6 +1,13 @@
 <?php
+    // Define the name comparison function
+    function compareByName($a, $b)
+    {
+        return strcmp($a['name'], $b['name']);
+    }
+
     session_start();
 
+    // Set content
     $content = [];
     if (isset($_POST) && isset($_POST["countResults"]))
     {
@@ -15,12 +22,15 @@
             ];
             $content[] = $array;
         }
+        usort($content, 'compareByName');
     }
     else
     {
         $content = $_SESSION[$_GET["id"]];
+        usort($content, 'compareByName');
     }
     
+    // Handle POST requests
     if ($_SERVER["REQUEST_METHOD"] == "POST")
     {
         if (isset($_POST["createFile"]))
