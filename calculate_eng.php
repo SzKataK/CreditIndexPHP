@@ -5,10 +5,12 @@
         return strcmp($a['name'], $b['name']);
     }
 
+    // Start session
     session_start();
 
     // Set content
     $content = [];
+
     if (isset($_POST) && isset($_POST["countResults"]))
     {
         $count = count($_POST["name"]);
@@ -31,9 +33,9 @@
     }
     
     // Handle POST requests
-    if ($_SERVER["REQUEST_METHOD"] == "POST")
+    if ($_POST)
     {
-        if (isset($_POST["createFile"]))
+        if (isset($_POST["createFile"]))    // Create file
         {
             $id = $_GET["id"];
             $file = fopen("downloads/" . $id . ".json", "w");
@@ -52,7 +54,7 @@
             }
             $file = "";
         }
-        else if (isset($_POST["countResults"]))
+        else if (isset($_POST["countResults"]))  // Calculate results
         {
             $newContent = [];
             
@@ -87,6 +89,78 @@
             }
 
             $_SESSION[$_GET["id"]] = $newContent;
+        }
+        else if (isset($_POST["addNewSubject"]))    // Add new subject
+        {
+            $array = [
+                "code" => $_POST["code"],
+                "name" => $_POST["name"],
+                "credit" => intval($_POST["credit"]),
+                "grade" => intval($_POST["grade"])
+            ];
+            $content[] = $array;
+            usort($content, 'compareByName');
+            $_SESSION[$_GET["id"]] = $content;
+
+            // Redirect to clear POST
+            header("Location: calculate_hu.php?id=" . $_GET["id"]);
+        }
+        else if (isset($_POST["conf"]) && isset($_POST["index"]))    // Delete subject
+        {
+            if ($_POST["conf"] == "true" && $_POST["index"] !== null)
+            {
+                array_splice($content, $_POST["index"], 1);
+                $_SESSION[$_GET["id"]] = $content;
+
+                // Redirect to clear POST
+                header("Location: calculate_hu.php?id=" . $_GET["id"]);
+            }
+        }
+        else
+        {
+            $index = null;
+            foreach ($_POST as $key => $value)
+            {
+                if (strpos($key, 'del-') === 0)
+                {
+                    $index = intval(str_replace('del-', '', $key));
+                    break;
+                }
+            }
+
+            if ($index !== null)    // Confirm deletion
+            {
+                echo "<script>
+                document.addEventListener('DOMContentLoaded', function()
+                {
+                    var conf = confirm('Are you sure you want to delete this subjects?');
+
+                    if (conf !== null)
+                    {
+                        var form = document.createElement('form');
+                        form.method = 'POST';
+                        form.action = '';
+
+                        // Create input for confirmation
+                        var input = document.createElement('input');
+                        input.type = 'hidden';
+                        input.name = 'conf';
+                        input.value = conf;
+                        form.appendChild(input);
+
+                        // Create input for index
+                        var indexInput = document.createElement('input');
+                        indexInput.type = 'hidden';
+                        indexInput.name = 'index';
+                        indexInput.value = " . json_encode($index) . ";
+                        form.appendChild(indexInput);
+
+                        document.body.appendChild(form);
+                        form.submit();
+                    }
+                });
+                </script>";
+            }
         }
     }
 ?>
@@ -126,7 +200,7 @@
         <?php endif; ?>
 
         <h2>Subjects</h2>
-        <p>Complete the data with your grades! If necessary, you can change the data here.</p>
+        <p>Complete the data with your grades! If necessary, you can change the data here. You can delete the subject with the "-" button next to the subject. You can add a new subject below with the "+" button.</p>
         <form method="post">
             <table>
                 <tr>
@@ -134,26 +208,38 @@
                     <th>Subject name</th>
                     <th>Credit</th>
                     <th>Grade</th>
+                    <th></th>
                 </tr>
                 <?php foreach ($content as $c) : ?>
                 <tr>
-                    <td><input name="code[]" type="text" size="20px" value="<?php echo $c["code"]; ?>"></td>
-                    <td><input name="name[]" type="text" size="50px" value="<?php echo $c["name"]; ?>"></td>
-                    <td><input name="credit[]" type="number" value="<?php echo $c["credit"]; ?>" min="0" max="10"></td>
-                    <td><input name="grade[]" type="number" value="<?php echo $c["grade"]; ?>" min="1" max="5"></td>
+                    <td><input name="code[]" type="text" size="20px" value="<?php echo $c["code"]; ?>" require></td>
+                    <td><input name="name[]" type="text" size="50px" value="<?php echo $c["name"]; ?>" require></td>
+                    <td><input name="credit[]" type="number" value="<?php echo $c["credit"]; ?>" min="0" max="10" require></td>
+                    <td><input name="grade[]" type="number" value="<?php echo $c["grade"]; ?>" min="1" max="5" require></td>
+                    <td><input name="del-<?php echo $count; ?>" type="submit" value="-" id="table-btn"></td>
                 </tr>
                 <?php endforeach; ?>
             </table>
             <input type="submit" id="btn" name="countResults" value="Calculate">
         </form>
 
-        <?php if (isset($_POST["countResults"])) : ?>
-            <form method="post">
-                <br><hr>
-                Do you want to save the data?
-                <input type="submit" id="btn" name="createFile" value="Create file">
-            </form>
-        <?php endif; ?>
+        <form method="post">
+            Do you want to save the data into file?
+            <input type="submit" id="btn" name="createFile" value="Create file">
+        </form>
+
+        <h2>Add new subject</h2>
+        <form method="post">
+            <table>
+                <tr>
+                    <td><input name="code" type="text" placeholder="Subject code" size="20px" required></td>
+                    <td><input name="name" type="text" placeholder="Subject name" size="50px" required></td>
+                    <td><input name="credit" type="number" placeholder="Credit" required min="0" max="10"></td>
+                    <td><input name="grade" type="number" placeholder="Grade" required min="1" max="5"></td>
+                    <td><input type="submit" id="table-btn" name="addNewSubject" value="+"></td>
+                </tr>
+            </table>
+        </form>
 
         <?php if (file_exists("downloads/" . $_GET["id"] . ".json")) : ?>
             <div id="dload">

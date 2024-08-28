@@ -111,7 +111,7 @@
             {
                 array_splice($content, $_POST["index"], 1);
                 $_SESSION[$_GET["id"]] = $content;
-                
+
                 // Redirect to clear POST
                 header("Location: calculate_hu.php?id=" . $_GET["id"]);
             }
@@ -200,7 +200,7 @@
         <?php endif; ?>
 
         <h2>Tárgyak</h2>
-        <p>Egészítsd ki az adatokat a jegyeiddel! Szükség esetén az adatokat itt tudod módosítani.</p>
+        <p>Egészítsd ki az adatokat a jegyeiddel! Szükség esetén az adatokat itt tudod módosítani. A tárgy mellett található "-" gombbal tudod törölni a tárgyat. Új tárgyat lent tudsz hozzáadni a "+" gombbal.</p>
         <form method="post">
             <table>
                 <tr>
@@ -208,6 +208,7 @@
                     <th>Tárgynév</th>
                     <th>Kredit</th>
                     <th>Jegy</th>
+                    <th></th>
                 </tr>
                 <?php $count = 0; ?>
                 <?php foreach ($content as $c) : ?>
@@ -216,8 +217,7 @@
                     <td><input name="name[]" type="text" size="50px" value="<?php echo $c["name"]; ?>" require></td>
                     <td><input name="credit[]" type="number" value="<?php echo $c["credit"]; ?>" min="0" max="10" require></td>
                     <td><input name="grade[]" type="number" value="<?php echo $c["grade"]; ?>" min="1" max="5" require></td>
-                    
-                    <td><input name="del-<?php echo $count; ?>" type="submit" value="-"></td>
+                    <td><input name="del-<?php echo $count; ?>" type="submit" value="-" id="table-btn"></td>
                 </tr>
                 <?php $count += 1; ?>
                 <?php endforeach; ?>
@@ -239,12 +239,10 @@
                     <td><input name="name" type="text" placeholder="Tárgynév" size="50px" required></td>
                     <td><input name="credit" type="number" placeholder="Kredit" required min="0" max="10"></td>
                     <td><input name="grade" type="number" placeholder="Jegy" required min="1" max="5"></td>
-                    <td><input type="submit" id="btn" name="addNewSubject" value="+"></td>
+                    <td><input type="submit" id="table-btn" name="addNewSubject" value="+"></td>
                 </tr>
             </table>
         </form>
-
-        
 
         <?php if (file_exists("downloads/" . $_GET["id"] . ".json")) : ?>
             <div id="dload">
