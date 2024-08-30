@@ -1,6 +1,6 @@
 # Credit index counter / kreditindex számoló
 
-Link: [https://credit.katiesz.live/](credit.katiesz.live)
+Link: *hamarosan*
 
 ## Summary in English
 
