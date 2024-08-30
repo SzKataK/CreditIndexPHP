@@ -1,5 +1,7 @@
 # Credit index counter / kreditindex számoló
 
+Link: [https://credit.katiesz.live/](credit.katiesz.live)
+
 ## Summary in English
 
 This is a credit index counter for Hungarian university students.
@@ -14,15 +16,9 @@ Kreditindex számoló magyar egyetemi hallgatóknak. Az oldalra belinkeltem azok
 
 Programozási nyelv: PHP
 
-Link: *hamarosan*
+Nyelv: magyar és angol
 
 ## Mit számol?
-
-- Kreditindex
-- Korrigált kreditindex
-- Teljesített kredit
-- Hagyományos átlag
-- Súlyozott átlag
 
 | Megnevezés | Számolás menete |
 | - | - |
@@ -31,3 +27,8 @@ Link: *hamarosan*
 | Teljesített kredit | $\sum \text{teljesített kredit}$ |
 | Hagyományos átlag | $\text{HA}  =  \dfrac{\sum \text{érdemjegy}}{\sum \text{tárgyak száma}}$ |
 | Súlyozott átlag | $\text{TÁ}  =  \dfrac{\sum (\text{teljesített kredit}  \cdot  \text{érdemjegy})}{\sum \text{teljesített kredit}}$ |
+
+## Hamarosan érkező funkciók
+
+[ ] Neptun Excel importálás
+[ ] Dark mode
