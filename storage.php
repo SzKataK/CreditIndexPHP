@@ -1,4 +1,8 @@
 <?php
+/*
+    This file is not under MIT license.
+    Source: https://valentinusz.github.io/notes/webprog/storage
+*/
 
 /**
  * Interface for being able to load data from and write date to a file.
