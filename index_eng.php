@@ -158,12 +158,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Credit index counter</title>
     <link rel="stylesheet" href="styles_animations/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <header>
-        <h1><a href="index.php">Credit index counter</a></h1>
+        <div>
+            <h1><a href="index_eng.php">Credit index counter</a></h1>
 
-        <div id="lang">
+            <div id="lang">
+                <a href="index.php">
+                    <div>HU</div>
+                </a>
+                <a href="index_eng.php">
+                    <div>ENG</div>
+                </a>
+            </div>
+
+            <div id="icon">
+                <a href="javascript:void(0);" onclick="showSettings()">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="settings">
+            Change language:
             <a href="index.php">
                 <div>HU</div>
             </a>
@@ -174,7 +192,7 @@
     </header>
 
     <div class="content">
-    <h2>Kreditindex számoló egyetemi hallgatóknak</h2>
+    <h2>Credit index counter for university students</h2>
         <p>The credit index is an academic index used by Hungarian universities. (It is similar to the GPA and ECTS used by foreign universities.) The basis on which the scholarships are awarded may differ from institution to institution, but this is used in many places. You can use this website to calculate your credit index.</p>
         <button class="collapsible">List of universities</button>
         <div class="collContent">

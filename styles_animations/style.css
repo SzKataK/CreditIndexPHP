@@ -155,6 +155,11 @@ header div h1 a:hover {
         color: var(--white);
         background-color: var(--dark);
     }
+
+
+
+
+    
 }
 
 
@@ -196,4 +201,8 @@ img {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-out;
+}
+
+.text-input form textarea {
+    width: 100%;
 }

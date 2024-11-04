@@ -143,21 +143,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
-    <!--
-    <header>
-        <h1><a href="index.php">Kreditindex számoló</a></h1>
-
-        <div id="lang">
-            <a href="index.php">
-                <div>HU</div>
-            </a>
-            <a href="index_eng.php">
-                <div>ENG</div>
-            </a>
-        </div>
-    </header>
-    -->
-
     <header>
         <div>
             <h1><a href="index.php">Kreditindex számoló</a></h1>
@@ -178,7 +163,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
         </div>
         <div id="settings">
-            Languages:
+            Nyelvváltás:
             <a href="index.php">
                 <div>HU</div>
             </a>
@@ -187,10 +172,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </a>
         </div>
     </header>
-
-
-
-
 
     <div class="content">
         <h2>Kreditindex számoló egyetemi hallgatóknak</h2>

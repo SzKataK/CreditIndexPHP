@@ -4,3 +4,5 @@ downloads/*
 
 uploads/*
 !uploads/.placeholder
+
+.vscode/*
