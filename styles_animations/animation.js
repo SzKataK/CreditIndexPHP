@@ -9,6 +9,12 @@ document.querySelector(".collapsible").addEventListener("click", function () {
   }
 });
 
+// Close settings on window resize
+window.addEventListener('resize', function() {
+  var x = document.querySelector("#settings");
+  x.style.display = "none";
+});
+
 // Show settings
 function showSettings() {
   var x = document.querySelector("#settings");

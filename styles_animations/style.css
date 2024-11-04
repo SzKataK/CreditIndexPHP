@@ -100,12 +100,46 @@ header div h1 a:hover {
     background-color: var(--dark);
 }
 
+
+
 #icon {
     display: none;
+    align-items: center;
+    margin: 0px;
+    font-size: 1.1em;
+}
+
+#icon a {
+    padding: 10px;
+    border-radius: 5px;
+    color: var(--dark);
+    background-color: var(--white);
+}
+
+#icon a:hover {
+    color: var(--white);
+    background-color: var(--darker-middle);
 }
 
 #settings {
     display: none;
+    flex-direction: column;
+    align-items: center;
+    color: var(--white);
+    background-color: var(--darker-middle);
+}
+
+#settings div {
+    margin: 8px;
+    padding: 5px;
+    background-color: var(--white);
+    border-radius: 5px;
+    width: fit-content;
+}
+
+#settings div:hover {
+    color: var(--white);
+    background-color: var(--dark);
 }
 
 footer {
@@ -168,46 +202,10 @@ img {
 
     #icon {
         display: flex;
-        align-items: center;
-        margin: 0px;
-        font-size: 1.1em;
-    }
-    
-    #icon a {
-        padding: 10px;
-        border-radius: 5px;
-        color: var(--dark);
-        background-color: var(--white);
-    }
-    
-    #icon a:hover {
-        color: var(--white);
-        background-color: var(--darker-middle);
     }
 
     #settings {
         display: none;
-        flex-direction: column;
-        align-items: center;
-        color: var(--white);
-        background-color: var(--darker-middle);
-    }
-    
-    #settings div {
-        margin: 8px;
-        padding: 5px;
-        background-color: var(--white);
-        border-radius: 5px;
-        width: fit-content;
-    }
-    
-    #settings div:hover {
-        color: var(--white);
-        background-color: var(--dark);
-    }
-
-    .text-input form textarea {
-        width: 100%;
     }
 }
 
