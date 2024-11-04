@@ -30,5 +30,6 @@ Nyelv: magyar és angol
 
 ## Hamarosan érkező funkciók
 
-[ ] Neptun Excel importálás
-[ ] Dark mode
+- Neptun Excel importálás
+- Dark mode
+- Mobil nézet

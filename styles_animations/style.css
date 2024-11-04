@@ -2,6 +2,7 @@
     --white: #ffffff;
     --light: #e6f7ff;
     --middle: #A2C7E5;
+    --darker-middle: #609fd2;
     --dark: #022A50;
 }
 
@@ -66,12 +67,16 @@ a {
     width: fit-content;
 }
 
-header {
+header div {
     background-color: var(--middle);
     padding: 10px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+header div h1 a:hover {
+    text-decoration: underline;
 }
 
 #lang {
@@ -95,9 +100,66 @@ header {
     background-color: var(--dark);
 }
 
-header h1 a:hover {
-    text-decoration: underline;
+#icon {
+    display: none;
 }
+
+#settings {
+    display: none;
+}
+
+
+
+
+@media screen and (max-width: 600px) {
+    #lang {
+        display: none;
+    }
+
+    #icon {
+        display: flex;
+        align-items: center;
+        margin: 0px;
+        font-size: 1.1em;
+    }
+    
+    #icon a {
+        padding: 10px;
+        border-radius: 5px;
+        color: var(--dark);
+        background-color: var(--white);
+    }
+    
+    #icon a:hover {
+        color: var(--white);
+        background-color: var(--darker-middle);
+    }
+
+    #settings {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        color: var(--white);
+        background-color: var(--darker-middle);
+    }
+    
+    #settings div {
+        margin: 8px;
+        padding: 5px;
+        background-color: var(--white);
+        border-radius: 5px;
+        width: fit-content;
+    }
+    
+    #settings div:hover {
+        color: var(--white);
+        background-color: var(--dark);
+    }
+}
+
+
+
+
 
 footer {
     background-color: var(--middle);
@@ -120,7 +182,7 @@ img {
     width: fit-content;
     margin: 0px;
 }
-  
+
 .collapsible:hover {
     box-shadow: none;
     background-color: var(--dark);
