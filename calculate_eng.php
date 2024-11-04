@@ -201,12 +201,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Credit index counter</title>
     <link rel="stylesheet" href="styles_animations/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <header>
-        <h1><a href="<?php echo "back.php?id=" . $_GET["id"]; ?>">Credit index counter</a></h1>
+        <div>
+            <h1><a href="<?php echo "back.php?id=" . $_GET["id"]; ?>">Credit index counter</a></h1>
 
-        <div id="lang">
+            <div id="lang">
+                <a href="<?php echo "calculate_hu.php?id=" . $_GET["id"]; ?>">
+                    <div>HU</div>
+                </a>
+                <a href="<?php echo "calculate_eng.php?id=" . $_GET["id"]; ?>">
+                    <div>ENG</div>
+                </a>
+            </div>
+
+            <div id="icon">
+                <a href="javascript:void(0);" onclick="showSettings()">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="settings">
+            Change language:
             <a href="<?php echo "calculate_hu.php?id=" . $_GET["id"]; ?>">
                 <div>HU</div>
             </a>
@@ -284,5 +302,7 @@
         <br>
         <a href="https://github.com/SzKataK"><img src="styles_animations/github_logo.png" alt="github_logo"></a>
     </footer>
+
+    <script src="styles_animations/animation.js"></script>
 </body>
 </html>

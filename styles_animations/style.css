@@ -206,3 +206,7 @@ img {
 .text-input form textarea {
     width: 100%;
 }
+
+form {
+    overflow-y: auto;
+}
