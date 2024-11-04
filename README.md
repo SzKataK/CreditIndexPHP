@@ -32,4 +32,3 @@ Nyelv: magyar és angol
 
 - Neptun Excel importálás
 - Dark mode
-- Mobil nézet
