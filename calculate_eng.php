@@ -248,7 +248,7 @@
 
         <h2>Subjects</h2>
         <p>Complete the data with your grades! If necessary, you can change the data here. You can delete the subject with the "-" button next to the subject. You can add a new subject below with the "+" button.</p>
-        <form method="post">
+        <form method="post" class="credit-form">
             <table>
                 <tr>
                     <th>Subject code</th>
@@ -276,7 +276,7 @@
         </form>
 
         <h2>Add new subject</h2>
-        <form method="post">
+        <form method="post" class="credit-form">
             <table>
                 <tr>
                     <td><input name="code" type="text" placeholder="Subject code" size="20px" required></td>

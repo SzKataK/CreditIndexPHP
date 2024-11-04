@@ -108,8 +108,58 @@ header div h1 a:hover {
     display: none;
 }
 
+footer {
+    background-color: var(--middle);
+    padding: 12px;
+    text-align: center;
+}
 
+img {
+    width: 1.8em;
+    margin: 0px;
+    margin-top: 5px;
+}
 
+.collapsible {
+    background-color: var(--middle);
+    color: var(--dark);
+    font-weight: bold;
+    font-size: 1em;
+    padding: 7px;
+    width: fit-content;
+    margin: 0px;
+}
+
+.collapsible:hover {
+    box-shadow: none;
+    background-color: var(--dark);
+    color: var(--white);
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.collContent {
+    width: fit-content;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+#less-than-300 {
+    display: none;
+}
+
+@media screen and (max-width: 920px) {
+    .credit-form {
+        overflow-y: auto;
+    }
+}
+
+@media screen and (max-width: 810px) {
+    .text-input form textarea {
+        width: 100%;
+    }
+}
 
 @media screen and (max-width: 600px) {
     #lang {
@@ -156,57 +206,17 @@ header div h1 a:hover {
         background-color: var(--dark);
     }
 
-
-
-
-    
+    .text-input form textarea {
+        width: 100%;
+    }
 }
 
+@media screen and (max-width: 300px) {
+    #less-than-300 {
+        display: block;
+    }
 
-
-
-
-footer {
-    background-color: var(--middle);
-    padding: 12px;
-    text-align: center;
-}
-
-img {
-    width: 1.8em;
-    margin: 0px;
-    margin-top: 5px;
-}
-
-.collapsible {
-    background-color: var(--middle);
-    color: var(--dark);
-    font-weight: bold;
-    font-size: 1em;
-    padding: 7px;
-    width: fit-content;
-    margin: 0px;
-}
-
-.collapsible:hover {
-    box-shadow: none;
-    background-color: var(--dark);
-    color: var(--white);
-    font-weight: bold;
-    font-size: 1em;
-}
-
-.collContent {
-    width: fit-content;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
-}
-
-.text-input form textarea {
-    width: 100%;
-}
-
-form {
-    overflow-y: auto;
+    form {
+        overflow-y: auto;
+    }
 }

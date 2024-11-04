@@ -248,7 +248,7 @@
 
         <h2>Tárgyak</h2>
         <p>Egészítsd ki az adatokat a jegyeiddel! Szükség esetén az adatokat itt tudod módosítani. A tárgy mellett található "-" gombbal tudod törölni a tárgyat. Új tárgyat lent tudsz hozzáadni a "+" gombbal.</p>
-        <form method="post">
+        <form method="post" class="credit-form">
             <table>
                 <tr>
                     <th>Tárgykód</th>
@@ -280,7 +280,7 @@
         </form>
 
         <h2>Új tárgy hozzáadása</h2>
-        <form method="post">
+        <form method="post" class="credit-form">
             <table>
                 <tr>
                     <td><input name="code" type="text" placeholder="Tárgykód" size="20px" required></td>

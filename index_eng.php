@@ -192,6 +192,8 @@
     </header>
 
     <div class="content">
+    <p id="less-than-300">Attention: The screen is less than 300 pixels wide, so the content of the page may slide!</p>
+
     <h2>Credit index counter for university students</h2>
         <p>The credit index is an academic index used by Hungarian universities. (It is similar to the GPA and ECTS used by foreign universities.) The basis on which the scholarships are awarded may differ from institution to institution, but this is used in many places. You can use this website to calculate your credit index.</p>
         <button class="collapsible">List of universities</button>

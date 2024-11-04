@@ -174,6 +174,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </header>
 
     <div class="content">
+        <p id="less-than-300">Figyelem: A képernyő kevesebb, mint 300 pixel széles, ezért az oldal tartalma elcsúszhat!</p>
+
         <h2>Kreditindex számoló egyetemi hallgatóknak</h2>
         <p>A kreditindex egy tanulmányi mutató, amelyet a magyar egyetemeken használnak. Intézményenként eltérhet, hogy mi alapján adják az ösztöndíjakat, de sok helyen ezt használják. Az oldal arra szolgál, hogy könnyedén kiszámíthasd a kreditindexedet.</p>
         <button class="collapsible">Egyetemek listája</button>
