@@ -27,13 +27,6 @@ This is an online calculator designed for Hungarian university students to easil
 | Traditional Average | $\dfrac{\sum \text{grade}}{\sum \text{subjects}}$ |
 | Weighted Average | $\dfrac{\sum (\text{completed credit} \cdot \text{grade})}{\sum \text{completed credit}}$ |
 
-### Tech Stack
-
-- PHP
-- CSS3
-- JavaScript
-- Docker
-
 ### Usage
 
 [![Live Site](https://img.shields.io/badge/Live%20Site-credit.katiesz.live-blue?style=flat-square)](https://credit.katiesz.live)
@@ -77,13 +70,6 @@ Magyar egyetemi hallgatók számára készült online kalkulátor. Könnyen kisz
 | Teljesített kredit | $\sum \text{teljesített kredit}$ |
 | Hagyományos átlag | $\text{HA}  =  \dfrac{\sum \text{érdemjegy}}{\sum \text{tárgyak száma}}$ |
 | Súlyozott átlag | $\text{TÁ}  =  \dfrac{\sum (\text{teljesített kredit}  \cdot  \text{érdemjegy})}{\sum \text{teljesített kredit}}$ |
-
-### Felhasznált technológiák
-
-- PHP
-- CSS3
-- JavaScript
-- Docker
 
 ### Használat
 
