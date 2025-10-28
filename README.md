@@ -29,9 +29,9 @@ This is an online calculator designed for Hungarian university students to easil
 
 ### Usage
 
-[![Live Site](https://img.shields.io/badge/Live%20Site-credit.katiesz.live-blue?style=flat-square)](https://credit.katiesz.live)
-
-No installation required.
+```bash
+php -S localhost:8000
+```
 
 ### Planned Features
 
@@ -73,9 +73,9 @@ Magyar egyetemi hallgatók számára készült online kalkulátor. Könnyen kisz
 
 ### Használat
 
-[![Live Site](https://img.shields.io/badge/Live%20Site-credit.katiesz.live-blue?style=flat-square)](https://credit.katiesz.live)
-
-Nem igényel telepítést.
+```bash
+php -S localhost:8000
+```
 
 ### Tervezett funkciók
 
